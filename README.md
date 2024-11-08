@@ -20,7 +20,7 @@ Además, se configuró un archivo docker-compose para facilitar la creación y c
 ### 1 - Instalar Docker
 Para instalar Docker, puedes seguir la documentación oficial disponible en [Docker Documentation](https://www.docker.com/)
 
-### 2 - Instalar depedencias del proyecto
+### 2 - Instalar dependencias del proyecto
 Primero, deberás clonar el proyecto mediante el siguiente comando:
 ```
     git clone https://github.com/ReinaldoBustamante/simple-auth-api.git
@@ -42,16 +42,22 @@ POSTGRES_PASSWORD = Contraseña para acceder a la base de datos
 DATABASE_URL      = "postgresql://user:password@localhost:5432/db_name?schema=public"
 ```
 ### 4 - Inicializar servicios de Docker
-Para inicializar los servicios definidos en el archivo docker-compose.yml, ejecuta el siguiente comando:
+Para inicializar los servicios definidos en el archivo ``docker-compose.yml`` , ejecuta el siguiente comando:
 ```
     docker compose up -d
 ```
+### 5 - Migrar estructura a la base de datos
+Para aplicar las migraciones y actualizar la estructura de la base de datos según el esquema de Prisma, ejecuta el siguiente comando:
+```
+    npm run migrate
+```
+### 6 - Ejecutar proyecto
+Para iniciar el proyecto en modo de desarrollo, ejecuta el siguiente comando:
+```
+    npm run dev
+```
+Una vez que el servidor esté en funcionamiento, podrás interactuar con la API utilizando Postman. La URL de la API es: http://localhost:3000/api
 
- Ejecutar el comando npm run migrate
-
-- Ejecutar el proyecto con npm run dev
-
-- al interactuar con la api puedes usar postman la url es http://localhost:3000/api
 
 ## Endpoints
 
